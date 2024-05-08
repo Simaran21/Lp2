@@ -1,13 +1,14 @@
 #Implementation of BFS in Python ( Breadth First Search
 
 
-graph = {'A': ['B', 'C', 'E'],
-'B': ['A','D', 'E'],
-'C': ['A', 'F', 'G'],
-'D': ['B'],
-'E': ['A', 'B','D'],
-'F': ['C'],
-'G': ['C']}
+graph = {
+'5': ['3', '7'],
+'3': ['2','4'],
+'7': ['8'],
+'2': [],
+'4': ['8'],
+'8': [],
+}
 def bfs(graph, initial):
 	visited = []
 	queue = [initial]
@@ -20,12 +21,14 @@ def bfs(graph, initial):
 			for neighbour in neighbours:
 				queue.append(neighbour)
 	return visited
-print(bfs(graph,'A'))
+print(bfs(graph,'5'))
+
+
 
 
 #output
 """(base) student@student:~/Documents$ python3 sid.py
-['A', 'B', 'C', 'E', 'D', 'F', 'G']
+['5', '3', '7', '2', '4', '8']
 (base) student@student:~/Documents$ 
 """
 
