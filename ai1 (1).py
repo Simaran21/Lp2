@@ -1,4 +1,33 @@
+#Implementation of BFS in Python ( Breadth First Search
 
+
+graph = {'A': ['B', 'C', 'E'],
+'B': ['A','D', 'E'],
+'C': ['A', 'F', 'G'],
+'D': ['B'],
+'E': ['A', 'B','D'],
+'F': ['C'],
+'G': ['C']}
+def bfs(graph, initial):
+	visited = []
+	queue = [initial]
+	while queue:
+		node = queue.pop(0)
+		if node not in visited:
+			visited.append(node)
+			neighbours = graph[node]
+
+			for neighbour in neighbours:
+				queue.append(neighbour)
+	return visited
+print(bfs(graph,'A'))
+
+
+#output
+"""(base) student@student:~/Documents$ python3 sid.py
+['A', 'B', 'C', 'E', 'D', 'F', 'G']
+(base) student@student:~/Documents$ 
+"""
 
 # DFS algorithm in Python
 
